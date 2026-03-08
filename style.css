@@ -561,12 +561,42 @@ nav {
     box-shadow: 0 6px 30px rgba(37,211,102,0.55);
   }
 
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    #experiencia, #contacto { grid-template-columns: 1fr; gap: 50px; }
-    .lugares-grid { grid-template-columns: 1fr 1fr; }
-    .galeria-masonry { grid-template-columns: 1fr 1fr; }
-    .gal-item:first-child { grid-column: span 2; }
-    .nav-links { display: none; }
-    footer { flex-direction: column; text-align: center; }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+  #experiencia, #contacto { 
+    grid-template-columns: 1fr; 
+    gap: 50px; 
   }
+
+  .lugares-grid { 
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .galeria-masonry { 
+    grid-template-columns: 1fr 1fr; 
+  }
+
+  .gal-item:first-child { 
+    grid-column: span 2; 
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+  }
+
+  footer { 
+    flex-direction: column; 
+    text-align: center; 
+  }
+
+}
