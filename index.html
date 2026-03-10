@@ -16,12 +16,16 @@
     <img src="imagenes/icons/logo.png" alt="Free Walking Tour Iquitos">
     <span>Free Walking Tour</span>
   </a>
-  <ul class="nav-links">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#experiencia">Experiencia</a></li>
-    <li><a href="#lugares">Lugares</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+  
+  <!-- AGREGA ESTO: Botón Hamburguesa -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#inicio" onclick="toggleMenu()">Inicio</a></li>
+    <li><a href="#experiencia" onclick="toggleMenu()">Experiencia</a></li>
+    <li><a href="#lugares" onclick="toggleMenu()">Lugares</a></li>
+    <li><a href="#galeria" onclick="toggleMenu()">Galería</a></li>
+    <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
   </ul>
 </nav>
 
