@@ -7,6 +7,7 @@
 :root {
   --verde: #093409e3;
   --verde-petroleo: #044f04b6;
+  --verde-oscuro: #051905;
   --dorado: #efdc11d8;
   --dorado-claro: #411105d8;
   --blanco: #b1cb04b7;
@@ -23,9 +24,9 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Corta cualquier contenido que se salga a los lados */
+  overflow-x: hidden;
   position: relative;
-
+  min-height: 100vh;
 }
 
 /* NAV */
@@ -103,8 +104,8 @@ nav {
   background:
     linear-gradient(to right, rgba(10,28,10,0.82) 45%, rgba(10,28,10,0.2) 100%),
     url('imagenes/fondoweb/fondo.jpg') center/cover no-repeat;
-  background-size: cover;   /* ← AQUI se ajusta el tamaño */
-
+  background-size: cover;
+  background-position: center center;
   transform: scale(1);
   animation: zoomOut 12s ease forwards;
 }
@@ -309,11 +310,10 @@ section { padding: 100px 6%; }
 
 /* LUGARES */
 #lugares {
-background:
-linear-gradient(rgba(10,28,10,0.85), rgba(10,28,10,0.85)),
-url("imagenes/fondoweb/fondo3.png") center/cover no-repeat;
-
-text-align: center;
+  background:
+    linear-gradient(rgba(10,28,10,0.85), rgba(10,28,10,0.85)),
+    url("imagenes/fondoweb/fondo3.png") center/cover no-repeat;
+  text-align: center;
 }
 
 #lugares .section-title { margin-bottom: 60px; }
@@ -371,9 +371,8 @@ text-align: center;
 /* GALERÍA */
 #galeria {
   background:
-  linear-gradient(rgba(10,28,10,0.85), rgba(10,28,10,0.85)),
-  url("imagenes/fondoweb/fondo4.jpg") center/cover no-repeat;
-
+    linear-gradient(rgba(10,28,10,0.85), rgba(10,28,10,0.85)),
+    url("imagenes/fondoweb/fondo4.jpg") center/cover no-repeat;
   padding: 100px 6%;
 }
 
@@ -417,9 +416,8 @@ text-align: center;
 /* CONTACTO */
 #contacto {
   background:
-  linear-gradient(rgba(10,28,10,0.88), rgba(10,28,10,0.88)),
-  url("imagenes/fondoweb/fondo5.jpg") center/cover no-repeat;
-
+    linear-gradient(rgba(10,28,10,0.88), rgba(10,28,10,0.88)),
+    url("imagenes/fondoweb/fondo5.jpg") center/cover no-repeat;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -455,6 +453,7 @@ text-align: center;
   font-size: 1.1rem;
   flex-shrink: 0;
 }
+
 .contact-detail .icon img{
   width:26px;
   height:26px;
@@ -492,9 +491,7 @@ text-align: center;
   padding: 14px 18px;
   color: var(--blanco);
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.2s;
+  font-size: 0.95
 }
 
 .form-group input:focus,
@@ -612,20 +609,23 @@ footer {
 }
 
 
-/* RESPONSIVE */
+/* ================================
+   MEDIA QUERY MAX 900px
+   ================================ */
 @media (max-width: 900px) {
 
-  
-
+  /* EXPERIENCIA Y CONTACTO */
   #experiencia, #contacto { 
     grid-template-columns: 1fr; 
     gap: 50px; 
   }
 
+  /* LUGARES */
   .lugares-grid { 
     grid-template-columns: 1fr 1fr; 
   }
 
+  /* GALERÍA */
   .galeria-masonry { 
     grid-template-columns: 1fr 1fr; 
   }
@@ -634,6 +634,7 @@ footer {
     grid-column: span 2; 
   }
 
+  /* NAV */
   nav {
     flex-direction: column;
     align-items: flex-start;
@@ -647,11 +648,13 @@ footer {
     margin-top: 10px;
   }
 
+  /* FOOTER */
   footer { 
     flex-direction: column; 
     text-align: center; 
   }
 
+  /* HERO */
   .hero-buttons{
     flex-direction: column;
     align-items: flex-start;
@@ -671,19 +674,21 @@ footer {
     font-size: 1.8rem;
   }
 
-  /* AJUSTE BOTON WHATSAPP EN MOVIL */
+  /* BOTÓN WHATSAPP */
   .whatsapp-btn {
     bottom: 50px;
     right: 50px;
   }
 
-/* ============================================
-   MEDIA QUERIES PARA MÓVILES (MÁXIMO 768px)
-   ============================================ */
+} /* fin media 900px */
 
+
+/* ================================
+   MEDIA QUERY MAX 768px
+   ================================ */
 @media (max-width: 768px) {
 
-  /* --- NAV --- */
+  /* NAV */
   nav {
     height: auto;
     padding: 15px 5%;
@@ -711,7 +716,7 @@ footer {
     display: flex; /* Se muestra con JS */
   }
 
-  /* Botón Hamburguesa (Icono) */
+  /* Botón Hamburguesa */
   .menu-toggle {
     display: block !important;
     font-size: 1.8rem;
@@ -723,7 +728,7 @@ footer {
     z-index: 101;
   }
 
-  /* --- HERO --- */
+  /* HERO */
   .hero {
     padding: 100px 5% 60px;
     height: auto;
@@ -737,7 +742,7 @@ footer {
   }
 
   .hero-title {
-    font-size: 2.5rem; /* Tamaño fijo para móvil */
+    font-size: 2.5rem;
   }
 
   .hero-title-italic {
@@ -761,7 +766,7 @@ footer {
     justify-content: center;
   }
 
-  /* --- EXPERIENCIA --- */
+  /* EXPERIENCIA */
   #experiencia {
     padding: 60px 5%;
   }
@@ -771,7 +776,7 @@ footer {
   }
 
   .features {
-    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-columns: 1fr;
     gap: 15px;
   }
 
@@ -783,13 +788,13 @@ footer {
     height: 350px;
   }
 
-  /* --- LUGARES --- */
+  /* LUGARES */
   #lugares {
     padding: 60px 5%;
   }
 
   .lugares-grid {
-    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
@@ -797,7 +802,7 @@ footer {
     height: 280px;
   }
 
-  /* --- GALERÍA --- */
+  /* GALERÍA */
   #galeria {
     padding: 60px 5%;
   }
@@ -809,7 +814,7 @@ footer {
   }
 
   .galeria-masonry {
-    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
 
@@ -822,7 +827,7 @@ footer {
     grid-row: span 1;
   }
 
-  /* --- CONTACTO --- */
+  /* CONTACTO */
   #contacto {
     padding: 60px 5%;
     grid-template-columns: 1fr;
@@ -833,7 +838,7 @@ footer {
     padding: 30px 20px;
   }
 
-  /* --- FOOTER --- */
+  /* FOOTER */
   footer {
     flex-direction: column;
     text-align: center;
@@ -846,18 +851,28 @@ footer {
     gap: 10px;
   }
 
-  /* --- WHATSAPP --- */
+  /* BOTÓN WHATSAPP */
   .whatsapp-btn {
     bottom: 20px;
     right: 20px;
     width: 50px;
     height: 50px;
   }
-  
+
   .whatsapp-btn img {
     width: 28px;
     height: 28px;
   }
-}
-  
-}
+
+  /* AJUSTE DE FONDOS EN MÓVIL */
+  .hero-bg,
+  #experiencia,
+  #lugares,
+  #galeria,
+  #contacto {
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+} 
