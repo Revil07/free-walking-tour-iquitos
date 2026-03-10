@@ -5,12 +5,12 @@
 
 /* ---------- VARIABLES ---------- */
 :root {
-  --verde: #1a4a1a;
-  --verde-oscuro: #0f2d0f;
-  --dorado: #e8a020;
-  --dorado-claro: #f5b942;
-  --blanco: #f5f0e8;
-  --crema: #fdf6ec;
+  --verde: #093409e3;
+  --verde-petroleo: #044f04b6;
+  --dorado: #efdc11d8;
+  --dorado-claro: #411105d8;
+  --blanco: #b1cb04b7;
+  --crema: #c67503e9;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,7 +20,12 @@ body {
   font-family: 'DM Sans', sans-serif;
   background: var(--verde-oscuro);
   color: var(--blanco);
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Corta cualquier contenido que se salga a los lados */
+  position: relative;
+
 }
 
 /* NAV */
@@ -28,13 +33,13 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: var(--verde-oscuro);
+  background: var(--verde-petroleo);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  height: 64px;
-  border-bottom: 1px solid rgba(232,160,32,0.15);
+  height: 80px;
+  border-bottom: 1px solid rgb(241, 158, 14);
   backdrop-filter: blur(8px);
   transition: transform 0.35s ease;
 }
@@ -52,7 +57,7 @@ nav {
 }
 
 .nav-logo img{
-  height:34px;
+  height:65px;
   width:auto;
 }
 
@@ -97,7 +102,9 @@ nav {
   height: 100%;
   background:
     linear-gradient(to right, rgba(10,28,10,0.82) 45%, rgba(10,28,10,0.2) 100%),
-    url('https://images.unsplash.com/photo-1601225998165-d3890b73e370?w=1600&q=80') center/cover no-repeat;
+    url('imagenes/fondoweb/fondo.png') center/cover no-repeat;
+  background-size: cover;   /* ← AQUI se ajusta el tamaño */
+
   transform: scale(1);
   animation: zoomOut 12s ease forwards;
 }
@@ -110,7 +117,7 @@ nav {
 .hero-content {
   position: relative;
   max-width: 680px;
-  margin-top: 100px;
+  margin-top: 15px;
   animation: fadeUp 1.1s ease 0.3s both;
 }
 
@@ -225,11 +232,9 @@ section { padding: 100px 6%; }
 
 /* EXPERIENCIA */
 #experiencia {
-  background: var(--verde-oscuro);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  background:
+    linear-gradient(rgba(5, 57, 5, 0.85), rgba(10,28,10,0.85)),
+    url("imagenes/fondoweb/fondo7.jpg") center/cover no-repeat;
 }
 
 .exp-text p {
@@ -304,8 +309,11 @@ section { padding: 100px 6%; }
 
 /* LUGARES */
 #lugares {
-  background: linear-gradient(180deg, var(--verde-oscuro) 0%, var(--verde) 100%);
-  text-align: center;
+background:
+linear-gradient(rgba(10,28,10,0.85), rgba(10,28,10,0.85)),
+url("imagenes/fondoweb/fondo3.png") center/cover no-repeat;
+
+text-align: center;
 }
 
 #lugares .section-title { margin-bottom: 60px; }
@@ -362,7 +370,10 @@ section { padding: 100px 6%; }
 
 /* GALERÍA */
 #galeria {
-  background: var(--verde);
+  background:
+  linear-gradient(rgba(10,28,10,0.85), rgba(10,28,10,0.85)),
+  url("imagenes/fondoweb/fondo4.jpg") center/cover no-repeat;
+
   padding: 100px 6%;
 }
 
@@ -405,7 +416,10 @@ section { padding: 100px 6%; }
 
 /* CONTACTO */
 #contacto {
-  background: var(--verde-oscuro);
+  background:
+  linear-gradient(rgba(10,28,10,0.88), rgba(10,28,10,0.88)),
+  url("imagenes/fondoweb/fondo5.jpg") center/cover no-repeat;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -432,14 +446,19 @@ section { padding: 100px 6%; }
 .contact-detail .icon {
   width: 42px;
   height: 42px;
-  background: rgba(232,160,32,0.12);
-  border: 1px solid rgba(232,160,32,0.25);
+  background: rgba(62, 98, 4, 0.951);
+  border: 1px solid rgb(13, 12, 12);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.1rem;
   flex-shrink: 0;
+}
+.contact-detail .icon img{
+  width:26px;
+  height:26px;
+  object-fit:contain;
 }
 
 .contact-form {
@@ -525,6 +544,15 @@ footer {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--blanco);
+  display: flex;        /* pone logo y texto en línea */
+  align-items: center;  /* los alinea verticalmente */
+  gap: 12px;            /* espacio entre logo y texto */
+}
+
+.footer-logo img{
+  height:40px;
+  width:auto;
+  display:block;
 }
 
 .footer-copy {
@@ -545,34 +573,49 @@ footer {
   transition: color 0.2s;
 }
 
+
+
 .footer-links a:hover { color: var(--dorado); }
 
-/* WHATSAPP FLOAT */
+/* WHATSAPP FLOAT - CORREGIDO */
 .whatsapp-btn {
-  position: fixed;
-  bottom: 30px;
-  right: -20px;
-  width: 57px;
-  height: 57px;
-  background: #25d366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  transition: transform 0.2s, box-shadow 0.2s;
-  z-index: 99999;
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  width: 60px !important;
+  height: 60px !important;
+  background: #25d366 !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 30px !important;
+  text-decoration: none !important;
+  z-index: 99999 !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+  transition: transform 0.3s ease, background 0.3s ease !important;
+
+  left: auto !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* 👇 AQUI agregas esto */
+.whatsapp-btn img{
+  width:30px;
+  height:30px;
 }
 
 .whatsapp-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 30px rgba(37,211,102,0.55);
+  transform: scale(1.1) !important;
+  background: #20ba5a !important;
 }
+
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
+
+  
 
   #experiencia, #contacto { 
     grid-template-columns: 1fr; 
@@ -628,13 +671,10 @@ footer {
     font-size: 1.8rem;
   }
 
-  .whatsapp
-
   /* AJUSTE BOTON WHATSAPP EN MOVIL */
-
-  .whatsapp-btn{
-    right: 25px;
-    bottom: 25px;
+  .whatsapp-btn {
+    bottom: 50px;
+    right: 50px;
   }
 
 }
