@@ -677,4 +677,187 @@ footer {
     right: 50px;
   }
 
+/* ============================================
+   MEDIA QUERIES PARA MÓVILES (MÁXIMO 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+
+  /* --- NAV --- */
+  nav {
+    height: auto;
+    padding: 15px 5%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-links {
+    display: none; /* Oculto por defecto en móvil */
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    margin-top: 10px;
+    background: rgba(4, 79, 4, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Se muestra con JS */
+  }
+
+  /* Botón Hamburguesa (Icono) */
+  .menu-toggle {
+    display: block !important;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--blanco);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 101;
+  }
+
+  /* --- HERO --- */
+  .hero {
+    padding: 100px 5% 60px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem; /* Tamaño fijo para móvil */
+  }
+
+  .hero-title-italic {
+    font-size: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    margin: 0 auto 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* --- EXPERIENCIA --- */
+  #experiencia {
+    padding: 60px 5%;
+  }
+
+  .exp-text p {
+    font-size: 0.95rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 15px;
+  }
+
+  .exp-image {
+    margin-top: 40px;
+  }
+
+  .exp-image img {
+    height: 350px;
+  }
+
+  /* --- LUGARES --- */
+  #lugares {
+    padding: 60px 5%;
+  }
+
+  .lugares-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+    gap: 20px;
+  }
+
+  .lugar-card {
+    height: 280px;
+  }
+
+  /* --- GALERÍA --- */
+  #galeria {
+    padding: 60px 5%;
+  }
+
+  .galeria-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .galeria-masonry {
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-rows: auto;
+  }
+
+  .gal-item {
+    height: 250px;
+  }
+
+  .gal-item:first-child {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  /* --- CONTACTO --- */
+  #contacto {
+    padding: 60px 5%;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+
+  /* --- FOOTER --- */
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 40px 5%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* --- WHATSAPP --- */
+  .whatsapp-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .whatsapp-btn img {
+    width: 28px;
+    height: 28px;
+  }
+}
+  
 }
