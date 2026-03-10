@@ -102,7 +102,7 @@ nav {
   height: 100%;
   background:
     linear-gradient(to right, rgba(10,28,10,0.82) 45%, rgba(10,28,10,0.2) 100%),
-    url('imagenes/fondoweb/fondo.png') center/cover no-repeat;
+    url('imagenes/fondoweb/fondo.jpg') center/cover no-repeat;
   background-size: cover;   /* ← AQUI se ajusta el tamaño */
 
   transform: scale(1);
