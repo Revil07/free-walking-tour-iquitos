@@ -122,11 +122,12 @@ margin-top:2px;
 }
 
 .menu-toggle{
-display:none;
-font-size:26px;
-background:none;
-border:none;
-cursor:pointer;
+  display:none;
+  font-size:28px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  margin-left:auto; /* empuja el botón a la derecha */
 }
 
 /* HERO */
@@ -342,7 +343,6 @@ transform:scale(1.1);
 
 @media(max-width:768px){
 
-  /* Estilo del menú móvil */
   .nav-links {
     position: absolute;
     top: 70px;
@@ -350,32 +350,34 @@ transform:scale(1.1);
     width: 100%;
     background: white;
     flex-direction: column;
-    display: none; /* oculto por defecto */
+    display: none;
     padding: 20px;
-    gap: 20px; /* espacio entre links */
+    gap: 20px;
   }
 
-  /* Mostrar menú al hacer toggle */
   .nav-links.show {
     display: flex;
   }
 
-  /* Estilo de los links dentro del menú móvil */
   .nav-links a {
-    font-size: 18px;                 /* tamaño igual que en escritorio */
-    font-family: 'Poppins', sans-serif; /* fuente igual que en escritorio */
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
     color: #333;
     text-decoration: none;
-    padding: 10px 0;                 /* espacio vertical entre links */
+    padding: 10px 0;
   }
 
-  /* Botón de menú móvil */
   .menu-toggle {
     display: block;
+    margin-left: auto;
+    font-size: 28px;
   }
 
-  /* Ajuste del hero en móvil */
+  .location-group{
+    display:none;
+  }
+
   .hero-title {
     font-size: 40px;
   }
