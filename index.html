@@ -47,20 +47,44 @@
   </button>
 
   <ul id="navLinks" class="nav-links">
-    <li><a href="#inicio">Inicio</a></li>
-    <li><a href="#experiencia">Experiencia</a></li>
-    <li><a href="#lugares">Lugares</a></li>
-    <li><a href="#galeria">Galería</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li>
+    <a href="#inicio" data-es="Inicio" data-en="Home">
+    Inicio
+    </a>
+    </li>
+    <li>
+<a href="#experiencia" data-es="Experiencia" data-en="Experience">
+Experiencia
+</a>
+</li>
+<li>
+<a href="#lugares" data-es="Lugares" data-en="Places">
+Lugares
+</a>
+</li>
+<li>
+<a href="#galeria" data-es="Galería" data-en="Gallery">
+Galería
+</a>
+</li>
+<li>
+<a href="#contacto" data-es="Contacto" data-en="Contact">
+Contacto
+</a>
+</li>
   </ul>
 
-  <div class="location-group">
-    <span class="location-text">Iquitos – Perú</span>
-    <img src="imagenes/icons/peru (2).png" alt="Bandera Perú" class="logo-bandera">
-  </div>
+<div class="location-group">
+  <span class="location-text">Iquitos – Perú</span>
+  <img src="imagenes/icons/peru (2).png" alt="Bandera Perú" class="logo-bandera">
+</div>
+
+<div class="language-switch">
+  <button onclick="setLanguage('es')">ES</button>
+  <button onclick="setLanguage('en')">EN</button>
+</div>
 
 </nav>
-
 </header>
 
 <!-- HERO -->
@@ -83,20 +107,26 @@ Free Walking Tour
 
 </h1>
 
-<p class="hero-desc">
+<p class="hero-desc"
+data-es="Descubre la magia de la ciudad amazónica con guías locales apasionados. Un recorrido auténtico por el corazón de la selva peruana."
+data-en="Discover the magic of the Amazonian city with passionate local guides. An authentic journey through the heart of the Peruvian jungle.">
 
-Descubre la magia de la ciudad amazónica con guías locales apasionados.  
+Descubre la magia de la ciudad amazónica con guías locales apasionados.
 Un recorrido auténtico por el corazón de la selva peruana.
 
 </p>
 
-<div class="hero-buttons">
+<a href="#lugares" class="btn-primary"
+data-es="Ver el Tour"
+data-en="See the Tour">
+Ver el Tour
+</a>
 
-<a href="#lugares" class="btn-primary">Ver el Tour</a>
-
-<a href="#contacto" class="btn-primary">Reserva tu Tour Gratis →</a>
-
-</div>
+<a href="#contacto" class="btn-primary"
+data-es="Reserva tu Tour Gratis →"
+data-en="Book your Free Tour →">
+Reserva tu Tour Gratis →
+</a>
 
 </div>
 
@@ -151,7 +181,7 @@ Nuestros guías locales te revelarán secretos, historias y rincones que ningún
 
 <div class="feature-icon">🗺️</div>
 
-<h3>3 Horas</h3>
+<h3>2 Horas</h3>
 
 <p>Recorrido completo por el centro histórico.</p>
 
@@ -173,11 +203,11 @@ Nuestros guías locales te revelarán secretos, historias y rincones que ningún
 
 <div class="exp-image">
 
-<img src="https://images.unsplash.com/photo-1601225998165-d3890b73e370?w=800&q=80" loading="lazy" alt="Vista del río Amazonas en Iquitos">
+<img src="imagenes/20250527_102513.jpg" loading="lazy" alt="Vista del río Amazonas en Iquitos">
 
 <div class="exp-badge">
 
-<span class="big">500+</span>
+<span class="big" id="contador-viajeros">0</span>+
 
 <span class="small">Viajeros este año</span>
 
@@ -236,6 +266,72 @@ Nuestros guías locales te revelarán secretos, historias y rincones que ningún
 </div>
 
 </article>
+
+</div>
+
+</section>
+
+<section id="tour-belen">
+
+<p class="section-label">Experiencia Especial</p>
+<h2 class="section-title">Free Walking Tour: Mercado de Belén</h2>
+
+<p class="tour-intro">
+¡Vive la experiencia más auténtica en el corazón de la selva peruana!
+Un recorrido de 2 horas por el mercado más exótico del mundo, donde
+descubriremos juntos los secretos de la Amazonía.
+</p>
+
+<div class="tour-grid">
+
+<div class="tour-item">
+<h3>Mercado de Belén</h3>
+<p>
+Un festival de biodiversidad. Verás especies únicas como el Paiche,
+el Suri y una gran variedad de productos amazónicos.
+</p>
+</div>
+
+<div class="tour-item">
+<h3>Pasaje Paquito</h3>
+<p>
+El rincón místico de Iquitos. Descubre medicina natural,
+tragos exóticos y la cultura esotérica de la Amazonía.
+</p>
+</div>
+
+<div class="tour-item">
+<h3>Venecia Amazónica</h3>
+<p>
+Casas, iglesias y grifos flotantes. Una perspectiva única
+de cómo se vive sobre el agua.
+</p>
+</div>
+
+<div class="tour-item">
+<h3>Sabor Amazónico</h3>
+<p>
+Tacacho con cecina, juane y pescado fresco a la parrilla.
+Los sabores más representativos de la selva.
+</p>
+</div>
+
+</div>
+
+<div class="tour-detalles">
+
+<h3>Horarios y detalles</h3>
+
+<ul>
+<li><strong>Días:</strong> Lunes a Domingo</li>
+<li><strong>Horario:</strong> entre 6:00 AM y 12:00 PM</li>
+<li><strong>Idiomas:</strong> Español – Inglés</li>
+<li><strong>Precio:</strong> Pay what you wish</li>
+</ul>
+
+<a href="https://wa.me/51917538235?text=Hola%20quiero%20reservar%20el%20tour%20de%20Bel%C3%A9n" class="btn-primary">
+Reservar este Tour
+</a>
 
 </div>
 

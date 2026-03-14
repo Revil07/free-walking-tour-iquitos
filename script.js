@@ -43,3 +43,88 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+/* ============================
+   CONTADOR DINÁMICO AL SCROLL
+   ============================ */
+
+const contador = document.getElementById("contador-viajeros");
+const seccionExperiencia = document.getElementById("experiencia");
+
+let iniciado = false;
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting && !iniciado){
+
+      iniciado = true;
+
+      let numero = 0;
+      const objetivo = 500;
+
+      const intervalo = setInterval(() => {
+
+        numero += 5;
+        contador.textContent = numero;
+
+        if(numero >= objetivo){
+          contador.textContent = objetivo;
+          clearInterval(intervalo);
+        }
+
+      }, 30);
+
+    }
+
+  });
+
+}, { threshold: 0.5 });
+
+observer.observe(seccionExperiencia);
+
+/* ============================
+   LIGHTBOX GALERÍA
+   ============================ */
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeLightbox = document.querySelector(".lightbox-close");
+
+document.querySelectorAll(".galeria-grid img").forEach(img => {
+
+  img.addEventListener("click", () => {
+
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+
+  });
+
+});
+
+closeLightbox.addEventListener("click", () => {
+
+  lightbox.style.display = "none";
+
+});
+
+lightbox.addEventListener("click", () => {
+
+  lightbox.style.display = "none";
+
+});
+
+/* ============================
+   CAMBIO DE IDIOMA
+   ============================ */
+
+function setLanguage(lang){
+
+const elements = document.querySelectorAll("[data-es]");
+
+elements.forEach(el => {
+  el.textContent = el.getAttribute("data-" + lang);
+});
+
+}
